@@ -1,0 +1,22 @@
+<%= form_tag send_spam_path, :multipart => true do%>
+<p>
+    <%= label_tag :subject%>
+    <%= text_field_tag :subject%>
+</p>
+<p>
+    <%= label_tag :from_email%>
+    <%= email_field_tag :from_email%>
+</p>
+
+<p>
+    <%= label_tag :to_email%>
+    <%= email_field_tag :to_email%>
+</p>
+
+<p>
+    <%= label_tag :html_message%>
+    <%= text_area_tag :html_message, nil, :size => "80x30"%>
+</p>
+
+<%= submit_tag "Spam!", :confirm => "Really want to send spam?"%>
+<% end %>

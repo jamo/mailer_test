@@ -1,4 +1,6 @@
 MailerTest::Application.routes.draw do
+  resources :spam
+  post "send_spam" => "spam#send_spam"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

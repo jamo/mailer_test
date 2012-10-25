@@ -34,4 +34,15 @@ MailerTest::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.raise_delivery_errors = true
+  ActionMailer::Base.perform_deliveries = true
+  
+  ActionMailer::Base.smtp_settings = {
+    :address              => "posti.saunalahti.fi",
+    :port                 => 25,
+    :domain               => "example.fi"
+  }
+  
 end
